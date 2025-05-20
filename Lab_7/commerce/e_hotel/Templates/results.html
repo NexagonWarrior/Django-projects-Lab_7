@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Search results:</h2>
+{% if hotels %}
+  {% for h in hotels %}
+    <p>{{ h.name }} — {{ h.city }} — ${{ h.price }}</p>
+  {% endfor %}
+{% else %}
+  <p>No hotels match your criteria.</p>
+{% endif %}
+<a href="{% url 'search' %}">Back</a>
+</body>
+</html>
